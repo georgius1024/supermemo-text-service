@@ -1,0 +1,30 @@
+<h2>Set translations in proper order</h2>
+<div class="word-sorter">
+  <div class="left-column">
+      <ul class="fixed">
+        <li *ngFor="let item of words()">
+          {{ item }}
+        </li>
+      </ul>
+  </div>
+  <div class="right-column">
+      <ul class="sortable" [sortablejs]="randomizedTranslations">
+        <li *ngFor="let item of randomizedTranslations">
+          {{ item }}
+        </li>
+      </ul>
+  </div>
+</div>
+<div class="alert alert-warning" role="alert" *ngIf="errors.length > 0">
+    <div class="alert-items">
+        <div class="alert-item static" *ngFor="let error of errors">
+            <span class="alert-text">
+              {{error.word}} => {{error.translation}}
+            </span>
+        </div>
+    </div>
+    <button type="button" class="close" aria-label="Close" (click)="errors = []">
+        <clr-icon aria-hidden="true" shape="close"></clr-icon>
+    </button>    
+</div>
+<button class="btn btn-primary" (click)="checkCorrect()">Check answer</button>

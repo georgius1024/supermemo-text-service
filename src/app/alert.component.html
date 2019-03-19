@@ -1,0 +1,21 @@
+<ng-container *ngFor="let alert of alerts">
+  <div @messageTrigger class="alert" [ngClass]="'alert-' + alert.className">
+    <button type="button" class="close" aria-label="Close" (click)="remove(alert.id)">
+      <clr-icon aria-hidden="true" shape="close"></clr-icon>
+    </button>
+    <div class="alert-items">
+      <div class="alert-item static">
+        <div *ngIf="alert.icon" class="alert-icon-wrapper">
+          <clr-icon class="alert-icon" [attr.shape]="alert.icon">
+          </clr-icon>
+        </div>
+        <span class="alert-text">
+          <strong *ngIf="alert.title">
+            {{alert.title}}
+          </strong>
+          {{alert.message}}
+        </span>
+      </div>
+    </div>
+  </div>
+</ng-container>

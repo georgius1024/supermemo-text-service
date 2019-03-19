@@ -1,0 +1,28 @@
+.word-sorter {
+  margin: 12px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  user-select: none;
+  .left-column {
+    flex-grow: 0;
+  }
+  .right-column {
+    flex-grow: 0;
+  }
+  ul {
+    list-style: none;
+    li {
+      padding: 12px;
+      margin: 6px 0;
+      font-size: 24px;
+      white-space: nowrap;
+    }
+  }
+  .sortable>li {
+    color: #fff;
+    cursor: pointer;
+    font-weight: 300;
+    background-color: #00968B
+  }
+}
