@@ -13,6 +13,7 @@ import { WordSorterComponent } from './WordSorter/WordSorter.component';
 import { AlertComponent } from './alert.component';
 import { TranslationComponent } from './Interactions/translation.component';
 import { HomeComponent } from './Home/home.component';
+import { MatchComponent } from './Interactions/match.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomeComponent } from './Home/home.component';
     WordSorterComponent,
     AlertComponent,
     TranslationComponent,
-    HomeComponent
+    HomeComponent,
+    MatchComponent
   ],
   imports: [
     BrowserModule,

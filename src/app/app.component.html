@@ -8,65 +8,14 @@
         </span>
       </a>
     </div>
+    <div class="header-nav">
+        <a routerlink="/" class="active nav-link nav-text">Start</a>
+    </div>    
   </header>
   <app-alert></app-alert>
   <div class="content-container">
     <div class="content-area">
-      <clr-tabs>
-
-        <clr-tab>
-            <button clrTabLink>Test</button>
-            <clr-tab-content *clrIfActive>
-              <app-interaction-translation 
-              [input]="input"
-              (outcome)="outcome($event)"
-              >
-            </app-interaction-translation>
-            </clr-tab-content>
-        </clr-tab>
-    
-        <clr-tab>
-          <button clrTabLink>Vocabulary</button>
-          <clr-tab-content *clrIfActive>
-            <app-word-selector (select)="wordsSelected($event)"></app-word-selector>
-          </clr-tab-content>
-        </clr-tab>
-
-        <clr-tab *ngIf="trainingList.length">
-          <button clrTabLink>Training</button>
-          <clr-tab-content *clrIfActive>
-            <app-word-sorter [trainingList]="trainingList"></app-word-sorter>
-          </clr-tab-content>
-        </clr-tab>
-
-        <clr-tab>
-          <button clrTabLink>Settings</button>
-          <clr-tab-content *clrIfActive>
-            <clr-input-container>
-                <label>Words count</label>
-                <input type="number" min=1 max=10 clrInput placeholder="Words count" name="name" />
-            </clr-input-container>            
-            <clr-toggle-container>
-              <label>Select languages</label>
-              <clr-toggle-wrapper>
-                <input type="checkbox" clrToggle name="options" required value="English" />
-                <label>English</label>
-              </clr-toggle-wrapper>
-              <clr-toggle-wrapper>
-                <input type="checkbox" clrToggle name="options" required value="Spain"  disabled/>
-                <label>Spain</label>
-              </clr-toggle-wrapper>
-              <clr-toggle-wrapper>
-                <input type="checkbox" clrToggle name="options" required value="French" disabled/>
-                <label>French</label>
-              </clr-toggle-wrapper>
-            </clr-toggle-container>
-          </clr-tab-content>
-        </clr-tab>
-      </clr-tabs>
-      <button class="btn btn-info" (click)="test()">
-        Test
-      </button>
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
