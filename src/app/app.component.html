@@ -13,10 +13,22 @@
   <div class="content-container">
     <div class="content-area">
       <clr-tabs>
+
+        <clr-tab>
+            <button clrTabLink>Test</button>
+            <clr-tab-content *clrIfActive>
+              <app-interaction-translation 
+              [input]="input"
+              (outcome)="outcome($event)"
+              >
+            </app-interaction-translation>
+            </clr-tab-content>
+        </clr-tab>
+    
         <clr-tab>
           <button clrTabLink>Vocabulary</button>
           <clr-tab-content *clrIfActive>
-            <app-word-selector [completedWord]="[]" (select)="wordsSelected($event)"></app-word-selector>
+            <app-word-selector (select)="wordsSelected($event)"></app-word-selector>
           </clr-tab-content>
         </clr-tab>
 

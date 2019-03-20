@@ -2,13 +2,16 @@
   ul {
     margin: 12px 0;
     user-select: none;
-    display: inline-block;
+    display: block;
     li {
       list-style-type: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       padding: 12px;
       margin: 12px 0;
       font-size: 24px;
-      .close {
+      .btn-right  {
         margin-left: 24px;
         float: right;
       }

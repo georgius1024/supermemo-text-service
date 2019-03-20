@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { AlertService } from '../alert.service';
-import { VocabularyItem } from '../WordSelector/WordSelector.component';
+import { VocabularyItem } from '../training.service';
 
 @Component({
   selector: 'app-word-sorter',

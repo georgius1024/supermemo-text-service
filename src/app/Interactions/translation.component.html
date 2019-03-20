@@ -1,0 +1,13 @@
+<form clrForm (ngSubmit)="onSubmit()" *ngIf="input">
+  <div class="h4">
+    Пожалуйста, выберите правильный перевод для слова "{{input.word}}"
+  </div>
+  
+  <clr-radio-wrapper *ngFor="let item of list" (click)="setResponse(item)">
+      <input type="radio" clrRadio [value]="item.translation" [(ngModel)]="response" name="response" />
+      <label>{{item.translation}}</label>
+  </clr-radio-wrapper>
+  <button class="btn btn-primary btn-block" [disabled]="!validResponse()">
+    Ответить
+  </button>
+</form>

@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { ClarityModule } from '@clr/angular';
@@ -9,19 +11,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { WordSelectorComponent } from './WordSelector/WordSelector.component';
 import { WordSorterComponent } from './WordSorter/WordSorter.component';
 import { AlertComponent } from './alert.component';
+import { TranslationComponent } from './Interactions/translation.component';
+import { HomeComponent } from './Home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     WordSelectorComponent,
     WordSorterComponent,
-    AlertComponent
+    AlertComponent,
+    TranslationComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     ClarityModule,
     HttpClientModule,
     SortablejsModule.forRoot({ animation: 150 }),
+    AppRoutingModule,
     BrowserAnimationsModule
   ],
   providers: [],
