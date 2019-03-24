@@ -9,7 +9,9 @@
       </a>
     </div>
     <div class="header-nav">
-        <a routerlink="/" class="active nav-link nav-text">Start</a>
+      <a routerLink="/" class="nav-link nav-text" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Словарь</a>
+      <a routerLink="/training" class="nav-link nav-text" routerLinkActive="active">Тренировка</a>
+      <a routerLink="/config" class="nav-link nav-text" routerLinkActive="active">Настройка</a>
     </div>    
   </header>
   <app-alert></app-alert>

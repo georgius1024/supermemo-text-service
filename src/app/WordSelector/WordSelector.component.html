@@ -2,26 +2,23 @@
   <h2>Новые слова для изучения</h2>
   <ul>
     <li *ngFor="let item of selectedWords">
-        <span>
-            {{ item.word }}
-        </span>
-        <button type="button" class="btn-right btn btn-link" aria-label="Close" (click)="requestConfirm(item)">
-          <clr-icon aria-hidden="true" shape="close"></clr-icon> Удалить
-        </button>
-      </li>
-    </ul>
+      <span>
+        {{ item.word }}
+      </span>
+      <button type="button" class="btn-right btn btn-link" aria-label="Close" (click)="requestConfirm(item)">
+        <clr-icon aria-hidden="true" shape="close"></clr-icon> Удалить
+      </button>
+    </li>
+  </ul>
+</div>
+
+<button class="btn btn-primary" (click)="done()" [disabled]="selectedWords.length===0">Добавить слова</button>
+
+<clr-modal [(clrModalOpen)]="testWord">
+
+  <h3 class="modal-title">Пожалуйста, подтвердите, что знаете это слово</h3>
+  <div class="modal-body">
+    <app-interaction-translation [input]="testWord" (outcome)="checkWordIsConfirmed($event)">
+    </app-interaction-translation>
   </div>
-
-  <button class="btn btn-primary" (click)="done()" [disabled]="selectedWords.length===0">Start training</button>
-
-  <clr-modal [(clrModalOpen)]="testWord" >
-
-      <h3 class="modal-title">Пожалуйста, подтвердите, что знаете это слово</h3>
-      <div class="modal-body">
-        <app-interaction-translation 
-        [input]="testWord"
-        (outcome)="checkWordIsConfirmed($event)"
-        >
-      </app-interaction-translation>
-    </div>
-  </clr-modal>
+</clr-modal>

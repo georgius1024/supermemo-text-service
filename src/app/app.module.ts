@@ -14,6 +14,8 @@ import { AlertComponent } from './alert.component';
 import { TranslationComponent } from './Interactions/translation.component';
 import { HomeComponent } from './Home/home.component';
 import { MatchComponent } from './Interactions/match.component';
+import { ConfigComponent } from './Config/config.component';
+import { TrainingComponent } from './Training/training.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { MatchComponent } from './Interactions/match.component';
     AlertComponent,
     TranslationComponent,
     HomeComponent,
-    MatchComponent
+    MatchComponent,
+    ConfigComponent,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,

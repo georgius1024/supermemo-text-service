@@ -1,0 +1,31 @@
+
+table.table {
+  border: 1px solid #aaa;
+  border-collapse: collapse;
+  td, th {
+    text-align: left;
+  }  
+  td.right, th.right {
+    text-align: right;
+  }  
+  td.center, th.center {
+    text-align: center;
+  }  
+    
+ }
+ 
+ table.striped td, table.striped th {
+   border: 1px solid #aaa;
+   padding: 6px 12px;
+   text-align: left;
+ }
+ 
+ table.striped tr:nth-child(odd) td {
+     background-color: #ccc;
+ }
+ 
+ table.condensed td, table.condensed th {
+     padding: 2px 4px
+ }
+ 
+ 

@@ -9,6 +9,7 @@ export interface VocabularyItem {
   transcription: string;
   translation: string;
   progress?: number;
+  errors?: number;
   last?: any;
 }
 
@@ -94,4 +95,35 @@ export class TrainingService {
     });
     return result;
   }
+
+  public getPool(): VocabularyItem[] {
+    return this.pool;
+  }
+
+  public addToPool(portion: VocabularyItem[]) {
+    this.pool = this.pool.concat(portion);
+    this.updatePool();
+  }
+
+  updatePool(): void {
+    localStorage.setItem(storageKey, JSON.stringify(this.pool));
+  }
+
+  public getTrainingList(quantity: number, maxProgress: number): VocabularyItem[] {
+    return [...this.pool]
+    .filter(v => !v.progress || v.progress < maxProgress)
+    .sort(random)
+    .slice(0, quantity);
+  }
+
+  public putTrainingList(list: VocabularyItem[]): void {
+    this.pool.forEach(p => {
+      list.forEach(l => {
+        if (p.word === l.word) {
+          p = l;
+        }
+      });
+    });
+  }
+
 }

@@ -1,0 +1,38 @@
+<div class="clr-row">
+  <div class="clr-col-lg-4 clr-offset-lg-4 clr-col-md-8 clr-offset-md-2 clr-col-12">
+    <div class="card">
+      <div class="card-header">
+        Параметры приложения
+      </div>
+      <div class="card-block">
+        <div class="card-text">
+          <form clrForm clrLayout="vertical">
+            <clr-input-container>
+              <label>Количество одновременно изучаемых слов:</label>
+              <input clrInput type="number" min="10" max="500" [(ngModel)]="config.wordsInTrainingQuantity"
+                name="wordsInTrainingQuantity" />
+            </clr-input-container>
+            <clr-input-container>
+              <label>Количество тренировок, необходимых для изучения слова:</label>
+              <input clrInput type="number" min="1" max="10" [(ngModel)]="config.trainingSessionsNecessary"
+                name="trainingSessionsNecessary" />
+            </clr-input-container>
+            <clr-input-container>
+              <label>Количество слов, изучаемых на одной тренировке:</label>
+              <input clrInput type="number" min="1" max="10" [(ngModel)]="config.trainingLessonWordsQuantity"
+                name="trainingLessonWordsQuantity" />
+            </clr-input-container>
+          </form>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-sm btn-primary" (click)="saveChanges()">
+                Сохранить
+            </button>
+            <button class="btn btn-sm btn-link" (click)="discardChanges()">
+                Отмена
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

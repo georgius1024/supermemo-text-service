@@ -32,7 +32,7 @@ export class WordSorterComponent implements OnInit {
   }
 
   checkCorrect() {
-    let errors = 0
+    let errors = 0;
     this.randomizedTranslations.forEach((translation: string, index: number) => {
       if (this.trainingList[index].translation !== translation) {
         this.alertService.add({

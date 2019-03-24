@@ -15,6 +15,10 @@ export class WordSelectorComponent implements OnInit {
   constructor(private alertService: AlertService, private trainingService: TrainingService) { }
 
   ngOnInit() {
+    this.refreshWords();
+  }
+
+  refreshWords() {
     this.trainingService.getNewWords$()
     .subscribe((list: VocabularyItem[]) => {
       this.selectedWords = list;
@@ -51,5 +55,6 @@ export class WordSelectorComponent implements OnInit {
 
   done() {
     this.select.emit(this.selectedWords);
+    this.refreshWords();
   }
 }
